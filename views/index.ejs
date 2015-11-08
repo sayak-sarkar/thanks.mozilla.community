@@ -20,7 +20,7 @@
             <h4 class="modal-title" id="myModalLabel">Give Thanks</h4>
           </div>
           <div class="modal-body">
-            <form action="/api/thanks" method="POST" id="inputForm">
+            <form action="/thanks" method="POST" id="inputForm">
               <div class="form-group">
                 <label for="inputTo">To</label>
                 <input type="text" class="form-control" id="inputTo" name="reciever">
@@ -42,6 +42,16 @@
         </div>
       </div>
     </div>
+
+    <h3>List of thanks:</h3>
+
+    <% thanks.forEach(function(thank){ %>
+    <p>
+      <p>To: <%= thank.reciever %></p>
+      <p><%= thank.message %></p>
+      <p>From: <%= thank.sender %></p>
+    </p>
+    <% }) %>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
