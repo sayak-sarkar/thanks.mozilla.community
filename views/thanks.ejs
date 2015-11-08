@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mozilla Gives Thanks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <p>To: <%= reciever %></p>
+    <p><%= message %></p>
+    <p>From: <%= sender %></p>
+
+    <p>Share with <%= reciever %> via: http://share.mozilla.community/thanks/<%= id %></p>
+
+    <!--<div class="input-group">
+      <input type="text" class="form-control" value="http://share.mozilla.community/thanks/<%= id %>" readonly>
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" id="copyButton">Copy</button>
+      </span>
+    </div><!-- /input-group -->
+
+    <!--
+    <a class="btn btn-default" href="https://twitter.com/intent/tweet" role="button"><i class="fa fa-twitter"></i> Tweet</a>
+    <a class="btn btn-default" href="#" role="button">Link</a>
+    <a class="btn btn-default" href="#" role="button">Link</a>
+    -->
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>
