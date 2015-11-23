@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Mozilla Gives Thanks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Mozilla Gives Thanks 2015 BVP (barely viable product)</h1>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#thanksModal">
+      Thank Someone
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="thanksModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Give Thanks</h4>
+          </div>
+          <div class="modal-body">
+            <form action="/thanks" method="POST" id="inputForm">
+              <div class="form-group">
+                <label for="inputTo">To</label>
+                <input type="text" class="form-control" id="inputTo" name="reciever">
+              </div>
+              <div class="form-group">
+                <label for="inputMessage">Message</label>
+                <textarea class="form-control" rows="3" id="inputMessage" name="message"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="inputFrom">From</label>
+                <input type="text" class="form-control" id="inputFrom" name="sender">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="inputSubmit">Give thanks!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>List of thanks:</h3>
+
+    <% thanks.forEach(function(thank){ %>
+    <p>
+      <p>To: <%= thank.reciever %></p>
+      <p><%= thank.message %></p>
+      <p>From: <%= thank.sender %></p>
+    </p>
+    <% }) %>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="/javascripts/script.js"></script>
   </body>
 </html>
